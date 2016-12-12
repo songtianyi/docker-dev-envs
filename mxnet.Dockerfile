@@ -46,5 +46,6 @@ RUN cd $GOPATH/src/golang.org/x && git clone https://github.com/golang/image
 RUN go get github.com/jdeng/gomxnet
 RUN go get github.com/disintegration/imaging
 RUN go get github.com/songtianyi/go-mxnet
-
+RUN git config --global user.name "songtianyi"
+RUN git config --global user.email "songtianyi630@163.com"
 
