@@ -37,15 +37,13 @@ RUN echo "export PYTHONPATH=/root/MXNet/mxnet/python" >> /root/.bashrc
 # Golang env
 RUN echo 'export GOPATH=$HOME/golang/own' >> /root/.bashrc
 RUN echo 'export GOROOT=/usr/lib/go' >> /root/.bashrc
-RUN echo 'alias src=$GOPATH/src' >> /root/.bashrc
+RUN echo 'alias src=\'cd $GOPATH/src\' >> /root/.bashrc
+RUN sed "/PS1/c PS1='\`date +%H:%M:%S\` ~ '" -i /root/.bashrc
 
 # Play with some code
 ENV GOPATH /root/golang/own
 RUN mkdir -p $GOPATH/src/golang.org/x
 RUN cd $GOPATH/src/golang.org/x && git clone https://github.com/golang/image
-RUN go get github.com/jdeng/gomxnet
-RUN go get github.com/disintegration/imaging
-RUN go get github.com/songtianyi/go-mxnet
 RUN git config --global user.name "songtianyi"
 RUN git config --global user.email "songtianyi630@163.com"
 
