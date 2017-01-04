@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN mkdir -p /root/MXNet/
 RUN cd /root/MXNet/ && git clone https://github.com/dmlc/mxnet.git --recursive
 RUN cd /root/MXNet/mxnet && make -j2
+RUN ln -s /root/MXNet/mxnet/lib/libmxnet.so /usr/lib/libmxnet.so
 
 # Install python language package
 RUN cd /root/MXNet/mxnet/python && python setup.py install
