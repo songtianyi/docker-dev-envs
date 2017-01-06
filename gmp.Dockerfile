@@ -28,7 +28,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Build mxnet
 RUN mkdir -p /root/MXNet/
 RUN cd /root/MXNet/ && git clone https://github.com/dmlc/mxnet.git --recursive
-RUN cd /root/MXNet/mxnet && git checkout v0.8.0
 RUN cd /root/MXNet/mxnet && make -j2
 RUN ln -s /root/MXNet/mxnet/lib/libmxnet.so /usr/lib/libmxnet.so
 
