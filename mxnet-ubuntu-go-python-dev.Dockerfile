@@ -39,7 +39,7 @@ RUN echo "export PYTHONPATH=/root/MXNet/mxnet/python" >> /root/.bashrc
 # Golang env
 RUN echo 'export GOPATH=$HOME/golang/own' >> /root/.bashrc
 RUN echo 'export GOROOT=/usr/lib/go' >> /root/.bashrc
-RUN echo "alias src=\'cd $GOPATH/src\'" >> /root/.bashrc
+RUN echo 'alias src=\"cd $GOPATH/src\"' >> /root/.bashrc
 RUN sed "/PS1/c PS1='\`date +%H:%M:%S\` ~ '" -i /root/.bashrc
 
 # Play with some code
